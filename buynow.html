@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now Form</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html" class="active"><b>HOME</b></a></li>
+            <li><a href="weights.html"><b>WEIGHTS</b></a></li>
+            <li><a href="machines.html"><b>MACHINES</b></a></li>
+            <li><a href="workout.html"><b>STAY-FIT PLAN</b></a></li>
+            <li><a href="cart.html"><b>CART</b></a></li>
+            <li><a href="orders.php"><b>MY ORDERS</b></a></li>
+            
+        </ul>
+    </nav>
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">Buy Now</h2>
+    <form action="buynow.php" method="POST" class="form-container" name="f1" onsubmit="return chk1()" >
+        <!-- Customer Name -->
+        <div class="mb-3">
+            <label for="Name" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your name">
+            <span id="errorname" style="color: red;"></span>
+        </div>
+
+        <!-- Customer Number -->
+        <div class="mb-3">
+            <label for="Number" class="form-label">Customer Number</label>
+            <input type="text" class="form-control" id="Number" name="Number" placeholder="Enter your phone number" >
+            <span id="errorphoneno" style="color: red;"></span>
+        </div>
+
+        <!-- Delivery Address -->
+        <div class="mb-3">
+            <label for="Address" class="form-label">Delivery Address</label>
+            <textarea class="form-control" id="Address" name="Address"rows="3" placeholder="Enter your full address" ></textarea>
+            <span id="erroraddr" style="color: red;"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Select Category</label>
+            <span id="errorcar" style="color: red;"></span>
+            <select class="form-select" id="category" name="category" >
+                <option value="">Choose a category...</option>
+                <option value="weights">weights</option>
+                <option value="machines">machines</option>
+                
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="product" class="form-label" >Product:</label>
+            <span id="errorradio" style="color: red;"></span><br>
+            
+            <input type="radio" name="pro" id="bar" class="form-check-input" value="bar">
+            <label for="bar" class="form-check-label">Weight Bar</label>
+        
+            <input type="radio" name="pro" id="dumbbell" class="form-check-input" value="dumbbell">
+            <label for="dumbbell" class="form-check-label">Dumbbell</label><br>
+        
+            <input type="radio" name="pro" id="plates" class="form-check-input" value="plates">
+            <label for="plates" class="form-check-label">Bumper Plates</label>
+        
+            <input type="radio" name="pro" id="bell" class="form-check-input" value="bell">
+            <label for="bell" class="form-check-label">Kettle Bell</label><br>
+
+            <input type="radio" name="pro" id="mill" class="form-check-input" value="mill">
+            <label for="mill" class="form-check-label">Treadmill</label>
+        
+            <input type="radio" name="pro" id="leg" class="form-check-input" value="leg">
+            <label for="leg" class="form-check-label">Leg Press Machine</label><br>
+        
+            <input type="radio" name="pro" id="bicep" class="form-check-input" value="bicep">
+            <label for="bicep" class="form-check-label">Biceps-triceps combo machine</label>
+        
+            <input type="radio" name="pro" id="pulley" class="form-check-input" value="pulley">
+            <label for="pulley" class="form-check-label">Lateral Pulley</label>
+        </div>
+        
+        
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Select Quantity</label>
+            <span id="errorquantity" style="color: red;"></span>
+            <select class="form-select" id="quantity" name="quantity" >
+                <option value="">Choose a quantity...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                
+            </select>
+        </div>
+        
+                <!-- Cash on Delivery Checkbox -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="checkcod" name="checkcod" >
+                    <label class="form-check-label" for="checkcod">Cash on Delivery</label>
+                    <span id="errorcheckbox" style="color: red;"></span>
+                </div>
+        
+                <!-- Accept Privacy Policy Checkbox -->
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="privacyPolicy" name="privacyPolicy" >
+                    <label class="form-check-label" for="privacyPolicy">I accept the <a href="policy.html">Privacy Policy</a></label>
+                    <span id="errorcheckbox" style="color: red;"></span>
+                </div>
+                <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Place Order</button>
+        
+    </form>
+
+    </div>
+
+    
+
+        
+</div>
+
+<script src="buynow.js"></script>
+<footer class="bg-dark text-center text-white py-3">
+    © 2025 FitTech Hub | <a href="policy.html" class="text-warning">Privacy Policy</a> | Contact:7411223344 | Email: fittechhub@gmail.com
+  </footer>
+</body>
+</html>

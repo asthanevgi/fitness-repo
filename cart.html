@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <style>
+        h1{
+            color: #000000;
+        }
+        h2{
+            color: #de1414;
+        }
+    </style>
+</head>
+<body style="background-color: burlywood;">
+    <nav>
+        <ul>
+            <li><a href="home.html" class="active"><b>HOME</b></a></li>
+            <li><a href="weights.html"><b>WEIGHTS</b></a></li>
+            <li><a href="machines.html"><b>MACHINES</b></a></li>
+            <li><a href="workout.html"><b>STAY-FIT PLAN</b></a></li>
+            <li><a href="cart.html"><b>CART</b></a></li>
+            <li><a href="orders.php"><b>MY ORDERS</b></a></li>
+            
+        </ul>
+    </nav><br>
+    <div class="container mt-5">
+    <h1 >Your Cart</h1><br>
+    <h2 id="cart-list"></h2>
+
+    <br>
+    
+   
+    <button class="btn btn-primary" onclick="clearCart()">Clear Cart</button> 
+</div><br><br><br><br><br><br><br><br>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartList = document.getElementById("cart-list");
+
+            if (cart.length === 0) {
+                cartList.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach(item => {
+                    let li = document.createElement("li");
+                    li.textContent = `${item.name} - ₹${item.price}`;
+                    cartList.appendChild(li);
+                });
+            }
+        });
+
+        function clearCart() {
+            localStorage.removeItem("cart"); // Clear cart from storage
+            alert("Cart cleared!"); 
+            location.reload(); // Refresh the page
+        }
+    </script>
+    <footer class="bg-dark text-center text-white py-3">
+        © 2025 FitTech Hub | <a href="policy.html" class="text-warning">Privacy Policy</a> | Contact:7411223344 | Email: fittechhub@gmail.com
+      </footer>
+</body>
+</html>
